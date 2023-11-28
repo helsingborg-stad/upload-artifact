@@ -20,5 +20,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: ./entrypoint.sh
+    - run: |
+        chmod +x ./entrypoint.sh
+        ./entrypoint.sh
       shell: bash
