@@ -1,0 +1,24 @@
+name: Upload artifact to release
+description: GitHub Action for uploading artifacts to existing releases
+inputs:
+  artifact:
+    description: The file to upload
+    required: true
+  artifact_mime_type:
+    description: The MIME type of the artifact to upload
+    required: true
+  repo:
+    description: The repository to upload to
+    required: true
+  release:
+    description: The version name of the release to upload to
+    required: true
+  gh_token:
+    description: The github token to use
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - run: ./entrypoint.sh
+      shell: bash
