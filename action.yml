@@ -20,5 +20,5 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: entrypoint.sh
+    - run: bash ./entrypoint.sh
       shell: bash
