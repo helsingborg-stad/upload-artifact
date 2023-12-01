@@ -21,4 +21,10 @@ runs:
   using: composite
   steps:
     - run: ${{github.action_path}}/entrypoint.sh
+      env:
+        INPUT_REPO: ${{ inputs.repo }}
+        INPUT_ARTIFACT: ${{ inputs.artifact }}
+        INPUT_RELEASE: ${{ inputs.release }}
+        INPUT_ARTIFACT_MIME_TYPE: ${{ inputs.artifact_mime_type }}
+        INPUT_GH_TOKEN: ${{ inputs.gh_token }}
       shell: bash
